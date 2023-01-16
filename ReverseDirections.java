@@ -11,7 +11,7 @@ import java.util.Scanner;
  * @author Gary Young
  * Original version: 11/14/2022
  * Original version: Printed locations in reverse, but didn't always print directions in reverse properly by switching any direction read from the original file over to the opposite & assuming that's good enough (not 100% accurate).
- * New version: Adjusted to print directions in reverse for any .txt file by using a recorder reading all the directions themselves from the original file & reversing them at the end of the file.
+ * New version: Adjusted to print directions in reverse for any file that contains the same format as the example files carls.txt & qdoba.txt by using a recorder reading all the directions themselves from the original file & reversing them at the end of the file.
  *
  * @version 01/16/2023
  * ReverseDirections takes in a file, determines if its valid, then outputs the directions in reverse order if valid.
@@ -21,15 +21,23 @@ public class ReverseDirections {
     // try catch should see file Qdoba.txt or carls.txt, then say not proper format, then close
     // open output file before input file so that input file does not bomb
     public void reverse(String inFileName) {
-        String outFileName = inFileName.substring(0, inFileName.length() - 4) + "Reverse.txt";
+        // will search for .txt if user put in no input
+        if (!inFileName.contains(".")) {
+            inFileName = inFileName + ".txt";
+        }
+        // will output the same format it came in as
+        int lastIndex = inFileName.lastIndexOf(".");
+        String outFileName = inFileName.substring(0, lastIndex) + "Reverse" + inFileName.substring(lastIndex);
+
         System.out.printf("Opening file %s for output", outFileName);
-        PrintWriter fOut;
         String originalStartLocation = ""; // end location when reversed
         StringBuilder inBetweenRev = new StringBuilder(); // all normal directions in between originalStart & originalEnd, but reversed road names
         String originalEndLocation = ""; // start location when reversed
         StringBuilder recorder = new StringBuilder(); // will record directions in reverse, checking from all directions from originalEndLocation to right after "Start at"
+
+        // the scanning & writing work starts here
         try {
-            fOut = new PrintWriter(new FileOutputStream(outFileName));
+            PrintWriter fOut = new PrintWriter(new FileOutputStream(outFileName));
             try {
                 // input file being searched
                 Scanner fIn = new Scanner(new FileInputStream(inFileName));
@@ -51,6 +59,18 @@ public class ReverseDirections {
                         inBetweenRev.insert(0, "\n on ");
                         inBetweenRev.insert(5, line.substring(5));
                     }
+                    // new 2 else if's: exit/merge
+                    else if (line.startsWith("E on")) {
+                        recorder.append("M");
+                        inBetweenRev.insert(0, "\n on ");
+                        inBetweenRev.insert(7, line.substring(5));
+                    }
+                    else if (line.startsWith("M on")) {
+                        recorder.append("E");
+                        inBetweenRev.insert(0, "\n on ");
+                        inBetweenRev.insert(7, line.substring(5));
+                    }
+                    // other else if's for adding end location string
                     else if (line.endsWith("on L")) {
                         recorder.append("R");
                         originalEndLocation = endofLineSubstring;
@@ -69,7 +89,7 @@ public class ReverseDirections {
                 for (int x = 0; x < recorder.length()-1; x++) {
                     // while loop for where to put in the letters from recorder
                     while (y < lenBeforeAdding) {
-                        indexLocation = (inBetweenRev.indexOf("\n on ", y));
+                        indexLocation = (inBetweenRev.indexOf("\n on", y));
                         if (indexLocation != -1) {
                             inBetweenRev.insert(indexLocation + 1, recorder.substring(x, x + 1));
                             break;
@@ -77,14 +97,16 @@ public class ReverseDirections {
                         y++;
                     }
                 }
-                // give user directions in reverse by:
+
+                // print user directions in reverse by:
                 // print where the user will start
                 fOut.print("Start at " + originalEndLocation);
                 // print directions in reverse
                 fOut.println(inBetweenRev);
                 // find the last reversed direction from recorder & print where the end location in reverse is to the user
-                fOut.println(originalStartLocation + " on " + recorder.charAt(recorder.length()-1));
+                fOut.print(originalStartLocation + " on " + recorder.charAt(recorder.length()-1));
                 fOut.close();
+
             // extra catches
             } catch (FileNotFoundException e) {
                 fOut.printf("File %s is not in the proper format", inFileName);
@@ -98,7 +120,8 @@ public class ReverseDirections {
     }
     public static void main (String[]args) {
         Scanner cin = new Scanner(System.in);
-        System.out.println("Enter the file name of the original directions ");
+        System.out.println("If your file is not a .txt file, please put the file format type at the end (such as .md or .xml)");
+        System.out.print("Enter the file name of the original directions\n» ");
         String inFileName = cin.nextLine();
         ReverseDirections reverser = new ReverseDirections();
         reverser.reverse(inFileName);
