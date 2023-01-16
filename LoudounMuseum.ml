@@ -1,4 +1,5 @@
 Start at Fair Oaks Mall
+R onto Lee Jackson Memorial Hwy
 M onto I-66
 E onto Sully Rd
 E onto Harry Byrd Hwy
