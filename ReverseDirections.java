@@ -63,12 +63,12 @@ public class ReverseDirections {
                     else if (line.startsWith("E on")) {
                         recorder.append("M");
                         inBetweenRev.insert(0, "\n on ");
-                        inBetweenRev.insert(7, line.substring(5));
+                        inBetweenRev.insert(5, line.substring(5));
                     }
                     else if (line.startsWith("M on")) {
                         recorder.append("E");
                         inBetweenRev.insert(0, "\n on ");
-                        inBetweenRev.insert(7, line.substring(5));
+                        inBetweenRev.insert(5, line.substring(5));
                     }
                     // other else if's for adding end location string
                     else if (line.endsWith("on L")) {
