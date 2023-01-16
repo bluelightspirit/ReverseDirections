@@ -10,7 +10,8 @@ import java.util.Scanner;
  *
  * @author Gary Young
  *
- * @description Original version: 11/14/2022
+ * @description
+ * Original version: 11/14/2022
  * Original version: Printed locations in reverse, but didn't always print directions in reverse properly by switching any direction read from the original file over to the opposite & assuming that's good enough (not 100% accurate).
  * New version: Adjusted to print directions in reverse for any file that contains the same format as the example files carls.txt & qdoba.txt by using a recorder reading all the directions themselves from the original file & reversing them at the end of the file.
  *
