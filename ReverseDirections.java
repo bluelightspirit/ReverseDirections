@@ -44,6 +44,10 @@ public class ReverseDirections {
                 while (fIn.hasNext()) {
                     String line = fIn.nextLine();
                     String endofLineSubstring = line.substring(0, line.length()-5);
+                    // bugfix: remove "to" if user inputted it ever
+                    if (line.startsWith("onto", 2)) {
+                        line = line.substring(0,4) + line.substring(6);
+                    }
                     // setting originalStartLocation
                     if (line.startsWith("Start at")) {
                         originalStartLocation = line.substring(9).concat(originalStartLocation);
@@ -92,9 +96,12 @@ public class ReverseDirections {
                         indexLocation = (inBetweenRev.indexOf("\n on", y));
                         if (indexLocation != -1) {
                             inBetweenRev.insert(indexLocation + 1, recorder.substring(x, x + 1));
-                            // add onto if action is merge/exit
+                            // attempt to add onto if action is merge/exit
                             if (recorder.substring(x, x + 1).equals("M") || recorder.substring(x, x + 1).equals("E")) {
-                                inBetweenRev.insert(indexLocation + 5, "to");
+                                // if fileInput doesn't already have "onto"
+                                if (inBetweenRev.indexOf("\n onto ", indexLocation) == -1) {
+                                    inBetweenRev.insert(indexLocation + 5, "to");
+                                }
                             }
                             break;
                         }
