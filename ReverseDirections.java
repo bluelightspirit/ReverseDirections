@@ -9,7 +9,8 @@ import java.util.Scanner;
  * <p>
  *
  * @author Gary Young
- * Original version: 11/14/2022
+ *
+ * @description Original version: 11/14/2022
  * Original version: Printed locations in reverse, but didn't always print directions in reverse properly by switching any direction read from the original file over to the opposite & assuming that's good enough (not 100% accurate).
  * New version: Adjusted to print directions in reverse for any file that contains the same format as the example files carls.txt & qdoba.txt by using a recorder reading all the directions themselves from the original file & reversing them at the end of the file.
  *
@@ -115,7 +116,7 @@ public class ReverseDirections {
                 fOut.print(originalStartLocation + " on " + recorder.charAt(recorder.length()-1));
                 fOut.close();
 
-            // extra catches
+                // extra catches
             } catch (FileNotFoundException e) {
                 fOut.printf("File %s is not in the proper format", inFileName);
                 System.err.printf("\nError reading input file %s%n", inFileName);
