@@ -92,6 +92,10 @@ public class ReverseDirections {
                         indexLocation = (inBetweenRev.indexOf("\n on", y));
                         if (indexLocation != -1) {
                             inBetweenRev.insert(indexLocation + 1, recorder.substring(x, x + 1));
+                            // add onto if action is merge/exit
+                            if (recorder.substring(x, x + 1).equals("M") || recorder.substring(x, x + 1).equals("E")) {
+                                inBetweenRev.insert(indexLocation + 5, "to");
+                            }
                             break;
                         }
                         y++;
