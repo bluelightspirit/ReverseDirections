@@ -15,7 +15,7 @@ import java.util.Scanner;
  * New version: Adjusted to print directions in reverse for any .txt file by using a recorder reading all the directions themselves from the original file & reversing them at the end of the file.
  *
  * @version 01/16/2022
- * ReverseDirections2 takes in a file, determines if its valid, then outputs the directions in reverse order if valid.
+ * ReverseDirections takes in a file, determines if its valid, then outputs the directions in reverse order if valid.
  */
 public class ReverseDirections {
     // flip line above or below it to reverse the order.
