@@ -4,10 +4,12 @@
 
 ## How does anyone use the tool?
 
-To use the tool, the user first should start up the tool using that uses the terminal.
-
-It should look like this when the user start up the tool:
+Anyone should be aiming to see the tool that looks like this:
 ![reversedirections_start](https://user-images.githubusercontent.com/22280271/213864556-513c255c-4cd6-4e10-a394-928fd933525d.jpg)
+
+First, [ReverseDirections.java](https://github.com/bluelightspirit/ReverseDirections/blob/main/ReverseDirections.java) must be downloaded. To do that, it is suggested to download the ZIP file from [Releases](https://github.com/bluelightspirit/ReverseDirections/releases) or copy the repo from a console like Git. It is also suggested to double check if the text-based files are in the same folder if the user plans to use the example text-based files. Then, [ReverseDirections.java](https://github.com/bluelightspirit/ReverseDirections/blob/main/ReverseDirections.java) should be compiled. After that, [ReverseDirections.java](https://github.com/bluelightspirit/ReverseDirections/blob/main/ReverseDirections.java)'s main method should be ran using any IDE that supports Java such as [IntelliJ](https://www.jetbrains.com/idea/download/) or [BlueJ](https://www.bluej.org/).
+
+Then, to use the tool, the user first should start up the tool using that uses the terminal.
 
 After that, the user should put the directions the user wishes to have reversed into a text-based file (.txt, .ml, .xml, etc).
 For proper formatting on how the directions must be given in, refer to [`LoudounMuseum.ml`](https://github.com/bluelightspirit/ReverseDirections/blob/main/LoudounMuseum.ml) or these images:
