@@ -38,14 +38,14 @@ If you received an error message or your file does not properly have directions 
 ## How does it work?
 
 These three steps is how the program works:
-1) Creates a new text-based file with "Reverse" after the file name the directions shall be reversed from
-2) Reads in the directions from a text-based file
-3) Outputs the directions in reverse order it came from the original text-based file onto the newly created text-based file with "Reverse" after the file name
+1) Creates a new text-based file with "Reverse" after the file name the directions shall be reversed from.
+2) Reads in the directions from a text-based file.
+3) Outputs the directions in reverse order it came from the original text-based file onto the newly created text-based file with "Reverse" after the file name.
 
 ## What did I learn?
 
 1) How to read a file and how to create a new file and write text to it.
-2) How to use StringBuilder
+2) How to use StringBuilder.
 3) How to truly reverse directions to the user rather than flip the directions and locations around and assume that will be the directions in reverse.
 
 ## Compiling
