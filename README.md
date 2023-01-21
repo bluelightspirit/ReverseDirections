@@ -28,7 +28,7 @@ After that, the user should press "ENTER." They should see this:\
 Then, they should see a file named after the file name they inserted added with "Reverse", and can refer to that as their reverse directions.
 If they were using the [`LoudounMuseum.ml`](https://github.com/bluelightspirit/ReverseDirections/blob/main/LoudounMuseum.ml) example, they should see this as the directions put in reverse:
 
-![image](https://user-images.githubusercontent.com/22280271/213865841-44a6cd5b-cdc5-49ca-9c60-16c76d36b065.png)
+![image](https://user-images.githubusercontent.com/22280271/213886209-851db8ed-16ef-4bae-a01c-1e60a0cdd92b.png)
 
 ## I received an error message or my reversed file does not properly have directions in reverse!
 
