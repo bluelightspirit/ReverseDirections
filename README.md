@@ -46,9 +46,10 @@ These three steps is how the program works:
 
 ## What did I learn?
 
-1) How to read a file and how to create a new file and write text to it.
-2) How to use StringBuilder.
-3) How to truly reverse directions to the user rather than flip the directions and locations around and assume that will be the directions in reverse.
+1) How to read a text-based file.
+2) How to create a new file and write text to it.
+3) How to use StringBuilder.
+4) How to truly reverse directions to the user rather than flip the directions and locations around and assume that will be the directions in reverse.
 
 ## Compiling
 
