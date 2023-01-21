@@ -28,9 +28,9 @@ If you were using the [`LoudounMuseum.ml`](https://github.com/bluelightspirit/Re
 
 ![image](https://user-images.githubusercontent.com/22280271/213865841-44a6cd5b-cdc5-49ca-9c60-16c76d36b065.png)
 
-## I received an error message!
+## I received an error message or my reversed file does not properly have directions in reverse!
 
-If you received an error message, please double check these three things:
+If you received an error message or your file does not properly have directions in reverse, please double check these three things:
 1) The file you inputted the directions in is in the same folder as where [`ReverseDirections.java`](https://github.com/bluelightspirit/ReverseDirections/blob/main/ReverseDirections.java) is running from.
 2) You inputted the file name and file format type exactly as the file is named.
 3) The file matches the format instructions exactly 1-1.
