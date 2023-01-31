@@ -51,6 +51,10 @@ These three steps is how the program works:
 3) How to use StringBuilder.
 4) How to truly reverse directions to the user rather than flip the directions and locations around and assume that will be the directions in reverse.
 
+## What goal(s) did I accomplish?
+
+I created a tool where the user gets their directions they inputted in reverse order it came in as!
+
 ## Compiling
 
 This program uses solely Java to compile.
